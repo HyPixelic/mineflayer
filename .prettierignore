@@ -1,0 +1,7 @@
+.env
+node_modules
+dist
+pnpm-lock.yaml
+package.json
+jsr.json
+tsconfig.json

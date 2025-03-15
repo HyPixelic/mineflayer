@@ -1,0 +1,21 @@
+{
+  "author": "Pixelic",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm tsc",
+    "test": "node --env-file=.env test/index.js",
+    "prettier:check": "pnpm dlx prettier . --check",
+    "prettier:write": "pnpm dlx prettier . --write"
+  },
+  "dependencies": {
+    "mineflayer": "^4.26.0",
+    "mowojang": "^0.3.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

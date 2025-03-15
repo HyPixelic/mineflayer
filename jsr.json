@@ -1,0 +1,12 @@
+{
+  "name": "@hypixelic/mineflayer",
+  "version": "0.0.1",
+  "exports": "./src/index.ts",
+  "publish": {
+    "include": [
+      "LICENSE",
+      "README.md",
+      "src/**/*.ts"
+    ]
+  }
+}

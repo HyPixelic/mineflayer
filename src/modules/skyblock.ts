@@ -1,4 +1,4 @@
-import type { Bot } from "../../types/index.js";
+import type { Bot } from "../../types/index.d.ts";
 
 export const parseSkyblockCoopChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_skyblock_coop_chat", /^Co-op > .*/);

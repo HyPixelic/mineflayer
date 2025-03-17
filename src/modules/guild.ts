@@ -1,4 +1,4 @@
-import type { Bot } from "../../types/index.js";
+import type { Bot } from "../../types/index.d.ts";
 
 export const parseGuildChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_guild_chat", /^Guild > .*:.*/);

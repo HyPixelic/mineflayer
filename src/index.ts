@@ -7,7 +7,9 @@ import {
   parsePrivateChat,
   parseSkyblockCoopChat,
 } from "./modules/index.js";
-import type { Bot } from "../types/index.js";
+
+import type { Bot } from "../types/index.d.ts";
+export type * from "../types/index.d.ts";
 
 export const HyFlayer = (bot: Bot): void => {
   bot.mowojang = new MowojangClient();

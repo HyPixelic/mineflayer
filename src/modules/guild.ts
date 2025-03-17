@@ -1,10 +1,8 @@
 import type { Bot } from "mineflayer";
 
-export const parseGuildEvents = (bot: Bot) => {
+export const parseGuildChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_guild_chat", /^Guild > .*:.*/);
   bot.addChatPattern("hypixel_guild_officer_chat", /^Officer > .*/);
-  bot.addChatPattern("hypixel_guild_join", /^Guild > [^:]+ joined\.$/);
-  bot.addChatPattern("hypixel_guild_leave", /^Guild > [^:]+ left\.$/);
   bot.on("chat:hypixel_guild_chat", async (msg) => {
     var player;
 
@@ -53,6 +51,11 @@ export const parseGuildEvents = (bot: Bot) => {
       timestamp: Math.floor(Date.now() / 1000),
     });
   });
+};
+
+export const parseGuildEvents = (bot: Bot) => {
+  bot.addChatPattern("hypixel_guild_join", /^Guild > [^:]+ joined\.$/);
+  bot.addChatPattern("hypixel_guild_leave", /^Guild > [^:]+ left\.$/);
   bot.on("chat:hypixel_guild_join", async (msg) => {
     bot.emit("HYPIXELIC_GUILD_JOIN", {
       UUID: await bot.mowojang.getUUID(msg.toString().split(" ")[2]),

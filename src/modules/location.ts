@@ -1,6 +1,6 @@
 import type { Bot } from "mineflayer";
 
-export const getLocation = (bot: Bot) => {
+export const parseLocation = (bot: Bot) => {
   bot.addChatPattern("hypixel_location", /\{[^{}]*"server"\s*:/);
   bot.on("chat:hypixel_location", (msg) => {
     try {
@@ -17,5 +17,8 @@ export const getLocation = (bot: Bot) => {
       console.error("Failed parsing current Hypixel Location");
     }
   });
+};
+
+export const getLocation = (bot: Bot) => {
   bot.chat("/locraw");
 };

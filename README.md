@@ -21,6 +21,18 @@ const bot = mineflayer.createBot({
 });
 
 bot.loadPlugin(HyFlayer);
+
+bot.on("HYPIXELIC_GUILD_CHAT", (event) => {
+  /*
+  On every Message sent in the Guild Chat you will now receive an Event Object structured like below:
+  {
+    "UUID":"14727faefbdc4aff848cd2713eb9939e",
+    "username":"Pixelic",
+    "message":"Hey",
+    "timestamp":1742216120
+  }
+  */
+});
 ```
 
 ## ⚙️ Development

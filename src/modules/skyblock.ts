@@ -1,4 +1,4 @@
-import type { Bot } from "mineflayer";
+import type { Bot } from "../../types/index.js";
 
 export const parseSkyblockCoopChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_skyblock_coop_chat", /^Co-op > .*/);

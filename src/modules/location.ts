@@ -1,4 +1,4 @@
-import type { Bot } from "mineflayer";
+import type { Bot } from "../../types/index.js";
 
 export const parseLocation = (bot: Bot) => {
   bot.addChatPattern("hypixel_location", /\{[^{}]*"server"\s*:/);

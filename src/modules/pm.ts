@@ -1,4 +1,4 @@
-import type { Bot } from "mineflayer";
+import type { Bot } from "../../types/index.js";
 
 export const parsePrivateChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_private_chat", /^From .*/);

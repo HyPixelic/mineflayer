@@ -12,7 +12,7 @@ export const parseLocation = (bot: Bot) => {
         map: location?.map ?? null,
         lobby: location?.lobbyname ? Number(location.lobbyname.replace(/\D/g, "")) : null,
       };
-      bot.emit("HYPIXELIC_LOCATION", bot.hypixel.location);
+      bot.emit("HYFLAYER_LOCATION", bot.hypixel.location);
     } catch {
       console.error("Failed parsing current Hypixel Location");
     }

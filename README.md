@@ -11,7 +11,7 @@
 
 ```TS
 import mineflayer from "mineflayer";
-import HyFlayer from "@hypixelic/mineflayer"
+import { HyFlayer } from "@hypixelic/mineflayer"
 
 const bot = mineflayer.createBot({
   host: "hypixel.net",
@@ -22,7 +22,7 @@ const bot = mineflayer.createBot({
 
 bot.loadPlugin(HyFlayer);
 
-bot.on("HYPIXELIC_GUILD_CHAT", (event) => {
+bot.on("HYFLAYER_GUILD_CHAT", (event) => {
   /*
   On every Message sent in the Guild Chat you will now receive an Event Object structured like below:
   {

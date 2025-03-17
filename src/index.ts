@@ -9,7 +9,7 @@ import {
 } from "./modules/index.js";
 import type { Bot } from "../types/index.js";
 
-export default function (bot: Bot, options: any) {
+export const HyFlayer = (bot: Bot): void => {
   bot.mowojang = new MowojangClient();
   bot.hypixel = {
     location: {},
@@ -21,4 +21,4 @@ export default function (bot: Bot, options: any) {
   parseSkyblockCoopChat(bot);
   parseGuildChat(bot);
   parseGuildEvents(bot);
-}
+};

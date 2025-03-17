@@ -53,7 +53,7 @@ export interface Bot extends MineflayerBot {
   hypixel: any;
   on<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;
   once<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;
-  emit<U extends keyof BotEvents>(event: U, ...args: Parameters<BotEvents[U]>): boolean;
+  emit<U extends keyof BotEvents>(event: U, ...args: Parameters<BotEvents[U]>): void;
 }
 
 export interface BotEvents extends MineflayerBotEvents {
@@ -64,11 +64,11 @@ export interface BotEvents extends MineflayerBotEvents {
   "chat:hypixel_guild_leave": (msg: string) => void;
   "chat:hypixel_skyblock_coop_chat": (msg: string) => void;
   "chat:hypixel_private_chat": (msg: string) => void;
-  HYPIXELIC_LOCATION: (event: LocationEvent) => void;
-  HYPIXELIC_GUILD_CHAT: (event: GuildChatEvent) => void;
-  HYPIXELIC_GUILD_OFFICER_CHAT: (event: GuildOfficerChatEvent) => void;
-  HYPIXELIC_GUILD_JOIN: (event: GuildJoinEvent) => void;
-  HYPIXELIC_GUILD_LEAVE: (event: GuildLeaveEvent) => void;
-  HYPIXELIC_SKYBLOCK_COOP_CHAT: (event: SkyblockCoopChatEvent) => void;
-  HYPIXELIC_PRIVATE_CHAT: (event: PrivateChatEvent) => void;
+  HYFLAYER_LOCATION: (event: LocationEvent) => void;
+  HYFLAYER_GUILD_CHAT: (event: GuildChatEvent) => void;
+  HYFLAYER_GUILD_OFFICER_CHAT: (event: GuildOfficerChatEvent) => void;
+  HYFLAYER_GUILD_JOIN: (event: GuildJoinEvent) => void;
+  HYFLAYER_GUILD_LEAVE: (event: GuildLeaveEvent) => void;
+  HYFLAYER_SKYBLOCK_COOP_CHAT: (event: SkyblockCoopChatEvent) => void;
+  HYFLAYER_PRIVATE_CHAT: (event: PrivateChatEvent) => void;
 }

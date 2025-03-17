@@ -12,7 +12,7 @@ export const parseSkyblockCoopChat = (bot: Bot) => {
       player = parsedMessage[2];
     }
 
-    bot.emit("HYPIXELIC_SKYBLOCK_COOP_CHAT", {
+    bot.emit("HYFLAYER_SKYBLOCK_COOP_CHAT", {
       UUID: await bot.mowojang.getUUID(player),
       username: player as string,
       message: msg.toString().slice(msg.toString().indexOf(":") + 2),

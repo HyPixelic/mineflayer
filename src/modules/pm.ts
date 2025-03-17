@@ -12,7 +12,7 @@ export const parsePrivateChat = (bot: Bot) => {
       player = parsedMessage[2];
     }
 
-    bot.emit("HYPIXELIC_PRIVATE_CHAT", {
+    bot.emit("HYFLAYER_PRIVATE_CHAT", {
       UUID: await bot.mowojang.getUUID(player),
       username: player as string,
       message: msg.toString().slice(msg.toString().indexOf(":") + 2),

@@ -17,6 +17,13 @@ interface GuildChatEvent {
   timestamp: number;
 }
 
+interface GuildOfficerChatEvent {
+  UUID: string;
+  username: string;
+  message: string;
+  timestamp: number;
+}
+
 interface GuildJoinEvent {
   UUID: string;
   username: string;
@@ -37,10 +44,12 @@ declare module "mineflayer" {
   interface BotEvents {
     "chat:hypixel_location": (msg: string) => void;
     "chat:hypixel_guild_chat": (msg: string) => void;
+    "chat:hypixel_guild_officer_chat": (msg: string) => void;
     "chat:hypixel_guild_join": (msg: string) => void;
     "chat:hypixel_guild_leave": (msg: string) => void;
     HYPIXELIC_LOCATION: (event: LocationEvent) => void;
     HYPIXELIC_GUILD_CHAT: (event: GuildChatEvent) => void;
+    HYPIXELIC_GUILD_OFFICER_CHAT: (event: GuildOfficerChatEvent) => void;
     HYPIXELIC_GUILD_JOIN: (event: GuildJoinEvent) => void;
     HYPIXELIC_GUILD_LEAVE: (event: GuildLeaveEvent) => void;
   }

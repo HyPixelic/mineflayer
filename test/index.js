@@ -10,6 +10,10 @@ const bot = mineflayer.createBot({
 
 bot.loadPlugin(HyFlayer);
 
+setTimeout(() => {
+  bot.chat("/limbo");
+}, 3000);
+
 bot.on("HYPIXELIC_LOCATION", (event) => {
   console.log("HYPIXELIC_LOCATION » " + JSON.stringify(event));
 });

@@ -1,4 +1,5 @@
 import type { Bot as MineflayerBot, BotEvents as MineflayerBotEvents } from "mineflayer";
+import type { Client as MowojangClient } from "mowojang";
 
 export interface LocationEvent {
   server: string;
@@ -19,8 +20,10 @@ export interface ChatEvent extends PlayerEvent {
 }
 
 export interface Bot extends MineflayerBot {
-  mowojang: any;
-  hypixel: any;
+  mowojang: MowojangClient;
+  hypixel: {
+    location: LocationEvent;
+  };
   on<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;
   once<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;
   emit<U extends keyof BotEvents>(event: U, ...args: Parameters<BotEvents[U]>): void;

@@ -15,7 +15,7 @@ export const HyFlayer = (bot: Bot): void => {
   bot.mowojang = new MowojangClient();
   bot.hypixel = {
     location: {},
-  };
+  } as Bot["hypixel"];
   parseLocation(bot);
   bot.once("spawn", () => getLocation(bot));
   bot.on("respawn", () => getLocation(bot));

@@ -11,15 +11,19 @@
 
 ```TS
 import mineflayer from "mineflayer";
-import { HyFlayer } from "@hypixelic/mineflayer"
+import { HyFlayer, Bot as HyFlayerBot } from "@hypixelic/mineflayer"
 
+// The following type trickery is needed as mineflayer isn't really type compatible.
+
+// @ts-expect-error
 const bot = mineflayer.createBot({
   host: "hypixel.net",
   username: "MICROSOFT_ACCOUNT_EMAIL",
   auth: "microsoft",
   version: "1.8.9",
-});
+}) as HyFlayerBot
 
+// @ts-expect-error
 bot.loadPlugin(HyFlayer);
 
 bot.on("HYFLAYER_GUILD_CHAT", (event) => {

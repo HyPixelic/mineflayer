@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       mineflayer:
-        specifier: ^4.26.0
-        version: 4.26.0
+        specifier: ^4.27.0
+        version: 4.27.0
       mowojang:
         specifier: ^0.3.4
         version: 0.3.4
@@ -32,8 +32,8 @@ packages:
   '@types/node-rsa@1.1.4':
     resolution: {integrity: sha512-dB0ECel6JpMnq5ULvpUTunx3yNm8e/dIkv8Zu9p2c8me70xIRUUG3q+qXRwcSf9rN3oqamv4116iHy90dJGRpA==}
 
-  '@types/node@22.13.10':
-    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
+  '@types/node@22.13.13':
+    resolution: {integrity: sha512-ClsL5nMwKaBRwPcCvH8E7+nU4GxHVx1axNvMZTFHMEfNI7oahimt26P5zjVCRrjiIWj6YFXfE1v3dEp94wLcGQ==}
 
   '@types/readable-stream@4.0.18':
     resolution: {integrity: sha512-21jK/1j+Wg+7jVw1xnSwy/2Q1VgVjWuFssbYGTREPUBeZ+rqVFl2udq0IkxzPC0ZhOzVceUbyIACFZKLqKEBlA==}
@@ -266,12 +266,12 @@ packages:
   minecraft-folder-path@1.2.0:
     resolution: {integrity: sha512-qaUSbKWoOsH9brn0JQuBhxNAzTDMwrOXorwuRxdJKKKDYvZhtml+6GVCUrY5HRiEsieBEjCUnhVpDuQiKsiFaw==}
 
-  minecraft-protocol@1.54.0:
-    resolution: {integrity: sha512-v8pWRVhD9kyd/X52j/XESxrNxkmz1OHzSXAJkPLOQUUTENEqisJhu1c3abS7ZI+MAXHAEA/vaCb/Eh6XFxw0lA==}
-    engines: {node: '>=14'}
+  minecraft-protocol@1.55.0:
+    resolution: {integrity: sha512-jlzmRxoNuj2bFk1fxR+dTg6Z4RpOR1/FLrk1zhft0jCwAIEhgV2OPi6Ceg2KFKADneEX0suhCty855A/qFLQWA==}
+    engines: {node: '>=22'}
 
-  mineflayer@4.26.0:
-    resolution: {integrity: sha512-1mCuyqIJUieq/ul7s7UUvcUvycYEMN7GFL5iCUB8DraDsJhj1waP74WkaMUMOKmNukv72T8+6S9O0Jaxer1QHw==}
+  mineflayer@4.27.0:
+    resolution: {integrity: sha512-3bxph4jfbkBh5HpeouorxzrfSLNV+i+1gugNJ2jf52HW+rt+tW7eiiFPxrJEsOVkPT/3O/dEIW7j93LRlojMkQ==}
     engines: {node: '>=22'}
 
   mojangson@2.0.4:
@@ -470,15 +470,15 @@ snapshots:
 
   '@types/node-rsa@1.1.4':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
 
-  '@types/node@22.13.10':
+  '@types/node@22.13.13':
     dependencies:
       undici-types: 6.20.0
 
   '@types/readable-stream@4.0.18':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
       safe-buffer: 5.1.2
 
   '@xboxreplay/errors@0.1.0': {}
@@ -702,7 +702,7 @@ snapshots:
 
   minecraft-folder-path@1.2.0: {}
 
-  minecraft-protocol@1.54.0:
+  minecraft-protocol@1.55.0:
     dependencies:
       '@types/node-rsa': 1.1.4
       '@types/readable-stream': 4.0.18
@@ -728,10 +728,10 @@ snapshots:
       - encoding
       - supports-color
 
-  mineflayer@4.26.0:
+  mineflayer@4.27.0:
     dependencies:
       minecraft-data: 3.84.1
-      minecraft-protocol: 1.54.0
+      minecraft-protocol: 1.55.0
       prismarine-biome: 1.3.0(minecraft-data@3.84.1)(prismarine-registry@1.11.0)
       prismarine-block: 1.21.0
       prismarine-chat: 1.11.0

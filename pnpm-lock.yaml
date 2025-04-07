@@ -12,8 +12,8 @@ importers:
         specifier: ^4.27.0
         version: 4.27.0
       mowojang:
-        specifier: ^0.3.4
-        version: 0.3.4
+        specifier: ^0.3.5
+        version: 0.3.5
     devDependencies:
       typescript:
         specifier: ^5.8.2
@@ -60,8 +60,8 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  axios-cache-interceptor@1.6.2:
-    resolution: {integrity: sha512-YLbAODIHZZIcD4b3WYFVQOa5W2TY/WnJ6sBHqAg6Z+hx+RVj8/OcjQyRopO6awn7/kOkGL5X9TP16AucnlJ/lw==}
+  axios-cache-interceptor@1.7.0:
+    resolution: {integrity: sha512-SP/QpCApakyGncF7ttyGsKt0CK5XG+tsdGAGTumHTzO1acnn9v7bd1XK1LiIcyXp46mlKS8j5iwvhNyFFWUKZQ==}
     engines: {node: '>=12'}
     peerDependencies:
       axios: ^1
@@ -69,8 +69,8 @@ packages:
   axios@0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
 
-  axios@1.8.3:
-    resolution: {integrity: sha512-iP4DebzoNlP/YN2dpwCgb8zoCmhtkajzS48JvwmkSkXvPI3DHc7m+XYL5tGnSlJtR6nImXZmdCuN5aP8dh1d8A==}
+  axios@1.8.4:
+    resolution: {integrity: sha512-eBSYY4Y68NNlHbHBMdeDmKNtDgXWhQsJcGqzO3iLUM0GraQFSS9cVgPX5I9b3lbdFKyYoAEGAZF1DwhTaljNAw==}
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
@@ -280,8 +280,8 @@ packages:
   moo@0.5.2:
     resolution: {integrity: sha512-iSAJLHYKnX41mKcJKjqvnAN9sf0LMDTXDEvFv+ffuRR9a1MIuXLjMNL6EsnDHSkKLTWNqQQ5uo61P4EbU4NU+Q==}
 
-  mowojang@0.3.4:
-    resolution: {integrity: sha512-pO62Uxth8ORevViqSdRDvpGEW92fnvEJKv5hDn4J0DwzFK4Zjaylfl16NjBKR48EWfsYagNYegJ1Ty6fa9iVQw==}
+  mowojang@0.3.5:
+    resolution: {integrity: sha512-Ornb//Fa7eJO7TB/r3GpiIVusEoflpHizmFXwqGaJ/jQIdFm2Q8+cjubXTrMYjIkOpZSkqGGb9Rz3b8WhX7U7A==}
     engines: {node: '>=20.0.0'}
 
   ms@2.1.3:
@@ -507,9 +507,9 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  axios-cache-interceptor@1.6.2(axios@1.8.3):
+  axios-cache-interceptor@1.7.0(axios@1.8.4):
     dependencies:
-      axios: 1.8.3
+      axios: 1.8.4
       cache-parser: 1.2.5
       fast-defer: 1.1.8
       object-code: 1.3.3
@@ -520,7 +520,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  axios@1.8.3:
+  axios@1.8.4:
     dependencies:
       follow-redirects: 1.15.9(debug@4.4.0)
       form-data: 4.0.2
@@ -757,10 +757,10 @@ snapshots:
 
   moo@0.5.2: {}
 
-  mowojang@0.3.4:
+  mowojang@0.3.5:
     dependencies:
-      axios: 1.8.3
-      axios-cache-interceptor: 1.6.2(axios@1.8.3)
+      axios: 1.8.4
+      axios-cache-interceptor: 1.7.0(axios@1.8.4)
     transitivePeerDependencies:
       - debug
 

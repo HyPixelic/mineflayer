@@ -11,9 +11,13 @@ import {
   sendSkyblockCoopMessage,
   sendGuildOfficerMessage,
   toggleGuildSlowChat,
+  muteGuildChat,
+  muteGuildMember,
+  unmuteGuildChat,
+  unmuteGuildMember,
 } from "./modules/index.js";
 
-import type { Bot } from "../types/index.d.ts";
+import type { Bot, GuildMuteDurations } from "../types/index.d.ts";
 export type * from "../types/index.d.ts";
 
 export const HyFlayer = (bot: Bot): void => {
@@ -32,6 +36,10 @@ export const HyFlayer = (bot: Bot): void => {
   bot.sendGuildMessage = (msg: string) => sendGuildMessage(bot, msg);
   bot.sendGuildOfficerMessage = (msg: string) => sendGuildOfficerMessage(bot, msg);
   bot.toggleGuildSlowChat = () => toggleGuildSlowChat(bot);
+  bot.muteGuildChat = (duration: GuildMuteDurations) => muteGuildChat(bot, duration);
+  bot.muteGuildMember = (member: string, duration: GuildMuteDurations) => muteGuildMember(bot, member, duration);
+  bot.unmuteGuildChat = () => unmuteGuildChat(bot);
+  bot.unmuteGuildMember = (member: string) => unmuteGuildMember(bot, member);
   bot.sendPrivateMessage = (player: string, msg: string) => sendPrivateMessage(bot, player, msg);
   bot.sendSkyblockCoopMessage = (msg: string) => sendSkyblockCoopMessage(bot, msg);
 

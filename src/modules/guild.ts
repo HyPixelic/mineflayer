@@ -1,4 +1,4 @@
-import type { Bot } from "../../types/index.d.ts";
+import type { Bot, GuildMuteDurations } from "../../types/index.d.ts";
 
 export const parseGuildChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_guild_chat", /^Guild > .*:.*/);
@@ -82,4 +82,20 @@ export const sendGuildOfficerMessage = (bot: Bot, msg: string) => {
 
 export const toggleGuildSlowChat = (bot: Bot) => {
   bot.chat(`/g slow`);
+};
+
+export const muteGuildChat = (bot: Bot, duration: GuildMuteDurations) => {
+  bot.chat(`/g mute everyone ${duration}`);
+};
+
+export const muteGuildMember = (bot: Bot, player: string, duration: GuildMuteDurations) => {
+  bot.chat(`/g mute ${player} ${duration}`);
+};
+
+export const unmuteGuildChat = (bot: Bot) => {
+  bot.chat(`/g unmute everyone`);
+};
+
+export const unmuteGuildMember = (bot: Bot, player: string) => {
+  bot.chat(`/g unmute ${player}`);
 };

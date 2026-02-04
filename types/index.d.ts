@@ -49,6 +49,8 @@ export interface PlayerChatEvent extends PlayerEvent {
   message: string;
 }
 
+export type GuildMuteDurations = "5m" | "15m" | "30m" | "1h" | "3h" | "6h" | "12h" | "1d" | "3d" | "5d" | "7d" | string;
+
 /**
  * Extendes the basic Mineflayer Bot interface provided by the mineflayer library.
  */
@@ -65,6 +67,10 @@ export interface Bot extends MineflayerBot {
   sendGuildMessage: (msg: string) => void;
   sendGuildOfficerMessage: (msg: string) => void;
   toggleGuildSlowChat: () => void;
+  muteGuildChat: (duration: GuildMuteDurations) => void;
+  muteGuildMember: (member: string, duration: GuildMuteDurations) => void;
+  unmuteGuildChat: () => void;
+  unmuteGuildMember: (member: string) => void;
   sendPrivateMessage: (player: string, msg: string) => void;
   sendSkyblockCoopMessage: (msg: string) => void;
   on<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;

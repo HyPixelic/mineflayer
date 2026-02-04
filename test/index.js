@@ -12,6 +12,8 @@ bot.loadPlugin(HyFlayer);
 
 setTimeout(() => {
   bot.chat("/limbo");
+  /* Latency will only be available later and will not be shown here */
+  console.log("Proxy Info » " + JSON.stringify(bot.hypixel.proxy));
 }, 3000);
 
 bot.on("HYFLAYER_LOCATION", (event) => {

@@ -55,6 +55,10 @@ export interface PlayerChatEvent extends PlayerEvent {
 export interface Bot extends MineflayerBot {
   mowojang: MowojangClient;
   hypixel: {
+    proxy: {
+      ip?: string;
+      port?: number;
+    };
     location: LocationEvent;
   };
   sendGuildMessage: (msg: string) => void;

@@ -20,3 +20,7 @@ export const parseSkyblockCoopChat = (bot: Bot) => {
     });
   });
 };
+
+export const sendSkyblockCoopMessage = (bot: Bot, msg: string) => {
+  bot.chat(`/coop ${msg}`);
+};

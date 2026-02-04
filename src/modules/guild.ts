@@ -71,3 +71,11 @@ export const parseGuildEvents = (bot: Bot) => {
     });
   });
 };
+
+export const sendGuildMessage = (bot: Bot, msg: string) => {
+  bot.chat(`/gc ${msg}`);
+};
+
+export const sendGuildOfficerMessage = (bot: Bot, msg: string) => {
+  bot.chat(`/oc ${msg}`);
+};

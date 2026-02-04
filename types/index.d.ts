@@ -57,6 +57,10 @@ export interface Bot extends MineflayerBot {
   hypixel: {
     location: LocationEvent;
   };
+  sendGuildMessage: (msg: string) => void;
+  sendGuildOfficerMessage: (msg: string) => void;
+  sendPrivateMessage: (player: string, msg: string) => void;
+  sendSkyblockCoopMessage: (msg: string) => void;
   on<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;
   once<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;
   emit<U extends keyof BotEvents>(event: U, ...args: Parameters<BotEvents[U]>): void;

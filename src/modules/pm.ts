@@ -20,3 +20,7 @@ export const parsePrivateChat = (bot: Bot) => {
     });
   });
 };
+
+export const sendPrivateMessage = (bot: Bot, player: string, msg: string) => {
+  bot.chat(`/msg ${player} ${msg}`);
+};

@@ -22,6 +22,7 @@ export const HyFlayer = (bot: Bot): void => {
     proxy: {
       ip: undefined,
       port: undefined,
+      latency: undefined,
     },
     location: {},
   } as Bot["hypixel"];
@@ -37,7 +38,11 @@ export const HyFlayer = (bot: Bot): void => {
     bot.hypixel.proxy = {
       ip: bot._client?.socket?.remoteAddress,
       port: bot._client?.socket?.remotePort,
+      latency: bot?.player?.ping || undefined,
     };
+    setInterval(() => {
+      bot.hypixel.proxy.latency = bot?.player?.ping || undefined;
+    }, 60000);
   });
 
   /* Location Parsing */

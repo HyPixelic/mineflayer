@@ -58,6 +58,7 @@ export interface Bot extends MineflayerBot {
     proxy: {
       ip?: string;
       port?: number;
+      latency?: number;
     };
     location: LocationEvent;
   };

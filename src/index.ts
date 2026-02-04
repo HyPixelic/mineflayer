@@ -10,6 +10,7 @@ import {
   sendPrivateMessage,
   sendSkyblockCoopMessage,
   sendGuildOfficerMessage,
+  toggleGuildSlowChat,
 } from "./modules/index.js";
 
 import type { Bot } from "../types/index.d.ts";
@@ -30,6 +31,7 @@ export const HyFlayer = (bot: Bot): void => {
   /* Functions */
   bot.sendGuildMessage = (msg: string) => sendGuildMessage(bot, msg);
   bot.sendGuildOfficerMessage = (msg: string) => sendGuildOfficerMessage(bot, msg);
+  bot.toggleGuildSlowChat = () => toggleGuildSlowChat(bot);
   bot.sendPrivateMessage = (player: string, msg: string) => sendPrivateMessage(bot, player, msg);
   bot.sendSkyblockCoopMessage = (msg: string) => sendSkyblockCoopMessage(bot, msg);
 

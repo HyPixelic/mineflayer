@@ -79,3 +79,7 @@ export const sendGuildMessage = (bot: Bot, msg: string) => {
 export const sendGuildOfficerMessage = (bot: Bot, msg: string) => {
   bot.chat(`/oc ${msg}`);
 };
+
+export const toggleGuildSlowChat = (bot: Bot) => {
+  bot.chat(`/g slow`);
+};

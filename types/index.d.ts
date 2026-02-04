@@ -64,6 +64,7 @@ export interface Bot extends MineflayerBot {
   };
   sendGuildMessage: (msg: string) => void;
   sendGuildOfficerMessage: (msg: string) => void;
+  toggleGuildSlowChat: () => void;
   sendPrivateMessage: (player: string, msg: string) => void;
   sendSkyblockCoopMessage: (msg: string) => void;
   on<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;

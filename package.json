@@ -13,7 +13,7 @@
     "mowojang": "^0.3.7"
   },
   "devDependencies": {
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "engines": {
     "node": ">=20.0.0"

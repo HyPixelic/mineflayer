@@ -12,8 +12,8 @@ importers:
         specifier: ^4.37.1
         version: 4.37.1
       mowojang:
-        specifier: ^0.4.5
-        version: 0.4.5
+        specifier: ^0.4.6
+        version: 0.4.6
     devDependencies:
       typescript:
         specifier: ^6.0.3
@@ -68,8 +68,8 @@ packages:
     peerDependencies:
       axios: ^1
 
-  axios@1.16.1:
-    resolution: {integrity: sha512-caYkukvroVPO8KrzuJEb50Hm07KwfBZPEC3VeFHTsqWHvKTsy54hjJz9BS/cdaypROE2rH6xvm9mHX4fgWkr3A==}
+  axios@1.18.0:
+    resolution: {integrity: sha512-E32NzpYKp++W7XRe52rHiXV2ehxmh3wbdgO7MHeFM+vqxLBYHzt0ElkiImtOBxtOmyp0yoC8C6uESVV84Y2/hw==}
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
@@ -166,8 +166,8 @@ packages:
       debug:
         optional: true
 
-  form-data@4.0.5:
-    resolution: {integrity: sha512-8RipRLol37bNs2bhoV67fiTEvdTrbMUYcFTiy3+wuuOnUog2QBHCZWXDRijWQfAkhBj2Uf5UnVaiWwA5vdd82w==}
+  form-data@4.0.6:
+    resolution: {integrity: sha512-vKatAh4SlVfgbv+YtmhiRjhEMJsYpsG1Y2rMQtR+SVSbytsSD1YGzDIcrAJmdFec88u/+VoGmxnl+80gL1tRCQ==}
     engines: {node: '>= 6'}
 
   function-bind@1.1.2:
@@ -282,8 +282,8 @@ packages:
   moo@0.5.3:
     resolution: {integrity: sha512-m2fmM2dDm7GZQsY7KK2cme8agi+AAljILjQnof7p1ZMDe6dQ4bdnSMx0cPppudoeNv5hEFQirN6u+O4fDE0IWA==}
 
-  mowojang@0.4.5:
-    resolution: {integrity: sha512-xvUbWHaaOP/0rrt+BLf4jP/7KPNCoMVcAwoWeimtlCQk0iXMkehpS64pZl4s9yG+lw6R1lgOaEo5DwfsyE/4Eg==}
+  mowojang@0.4.6:
+    resolution: {integrity: sha512-Z959jfH1VvmDzBUlyW4ewGs5daoKFs8xbVG4I/GI0FGuIjkBsKL+CBOY+0OMfU3A8pxVIeHPfFaSZPKTzXUkug==}
     engines: {node: '>=22.0.0'}
 
   ms@2.1.3:
@@ -513,19 +513,19 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  axios-cache-interceptor@1.12.0(axios@1.16.1):
+  axios-cache-interceptor@1.12.0(axios@1.18.0):
     dependencies:
-      axios: 1.16.1
+      axios: 1.18.0
       cache-parser: 1.2.6
       fast-defer: 1.1.9
       http-vary: 1.0.3
       object-code: 2.0.0
       try: 1.0.3
 
-  axios@1.16.1:
+  axios@1.18.0:
     dependencies:
       follow-redirects: 1.16.0
-      form-data: 4.0.5
+      form-data: 4.0.6
       https-proxy-agent: 5.0.1
       proxy-from-env: 2.1.0
     transitivePeerDependencies:
@@ -603,7 +603,7 @@ snapshots:
 
   follow-redirects@1.16.0: {}
 
-  form-data@4.0.5:
+  form-data@4.0.6:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
@@ -768,10 +768,10 @@ snapshots:
 
   moo@0.5.3: {}
 
-  mowojang@0.4.5:
+  mowojang@0.4.6:
     dependencies:
-      axios: 1.16.1
-      axios-cache-interceptor: 1.12.0(axios@1.16.1)
+      axios: 1.18.0
+      axios-cache-interceptor: 1.12.0(axios@1.18.0)
     transitivePeerDependencies:
       - debug
       - supports-color

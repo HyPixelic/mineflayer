@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "mineflayer": "^4.37.1",
-    "mowojang": "^0.4.5"
+    "mowojang": "^0.4.7"
   },
   "devDependencies": {
     "typescript": "^6.0.3"

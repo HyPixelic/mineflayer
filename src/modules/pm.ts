@@ -3,7 +3,7 @@ import type { Bot } from "../../types/index.d.ts";
 export const parsePrivateChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_private_chat", /^From .*/);
   bot.on("chat:hypixel_private_chat", async (msg) => {
-    var player;
+    let player: string;
 
     const parsedMessage = msg.toString().slice(0, msg.toString().indexOf(":")).split(" ");
     if (parsedMessage[2].includes("[")) {
@@ -12,9 +12,12 @@ export const parsePrivateChat = (bot: Bot) => {
       player = parsedMessage[2];
     }
 
+    const profile = await bot.mowojang.getProfile(player.trim());
+    if (profile.error || !profile.data) return;
+
     bot.emit("HYFLAYER_PRIVATE_CHAT", {
-      UUID: await bot.mowojang.getUUID(player),
-      username: player as string,
+      UUID: profile.data.UUID,
+      username: profile.data.username,
       message: msg.toString().slice(msg.toString().indexOf(":") + 2),
       timestamp: Math.floor(Date.now() / 1000),
     });

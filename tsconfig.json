@@ -8,8 +8,7 @@
     "strict": true,
     "declaration": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "resolveJsonModule": true
+    "skipDefaultLibCheck": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]

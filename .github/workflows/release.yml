@@ -16,6 +16,6 @@ jobs:
       - name: Use PNPM Package Manager
         uses: pnpm/action-setup@v6
         with:
-          version: 10
+          version: 11
       - run: pnpm install --frozen-lockfile
       - run: pnpm dlx jsr publish

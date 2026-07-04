@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       mineflayer:
-        specifier: ^4.37.1
+        specifier: ^4.34.0
         version: 4.37.1
       mowojang:
         specifier: ^0.4.8

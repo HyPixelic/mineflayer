@@ -19,6 +19,23 @@ import {
 
 import type { Bot, GuildMuteDurations } from "../types/index.d.ts";
 
+/**
+ * Injects the HyFlayer Plugin into a Mineflayer Bot
+ *
+ * @example
+ * ```TS
+ * import { HyFlayer, Bot as HyFlayerBot } from "@hypixelic/mineflayer"
+ *
+ * const bot = mineflayer.createBot({
+ * host: "hypixel.net",
+ * username: "MICROSOFT_ACCOUNT_EMAIL",
+ * auth: "microsoft",
+ * version: "1.8.9",
+ * }) as HyFlayerBot
+ *
+ * bot.loadPlugin(HyFlayer);
+ * ```
+ */
 export const HyFlayer = (bot: Bot): void => {
   /* Structures */
   bot.mowojang = new MowojangClient();

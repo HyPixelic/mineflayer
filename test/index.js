@@ -1,5 +1,5 @@
 import mineflayer from "mineflayer";
-import { HyFlayer } from "../dist/index.js";
+import { HyFlayer } from "../dist/src/index.js";
 
 const bot = mineflayer.createBot({
   host: "hypixel.net",
@@ -8,7 +8,9 @@ const bot = mineflayer.createBot({
   version: "1.8.9",
 });
 
-bot.loadPlugin(HyFlayer);
+const hyflayer = HyFlayer();
+
+bot.loadPlugin(hyflayer);
 
 setTimeout(() => {
   bot.chat("/limbo");

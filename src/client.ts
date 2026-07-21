@@ -17,7 +17,7 @@ import {
   unmuteGuildMember,
 } from "./modules/index.js";
 
-import type { Bot, GuildMuteDurations } from "../types/index.d.ts";
+import type { Bot, GuildMuteDurations, PluginOptions } from "../types/index.d.ts";
 
 /**
  * Injects the HyFlayer Plugin into a Mineflayer Bot
@@ -33,52 +33,58 @@ import type { Bot, GuildMuteDurations } from "../types/index.d.ts";
  * version: "1.8.9",
  * }) as HyFlayerBot
  *
- * bot.loadPlugin(HyFlayer);
+ * const hyflayer = HyFlayer()
+ *
+ * bot.loadPlugin(hyflayer);
  * ```
  */
-export const HyFlayer = (bot: Bot): void => {
-  /* Structures */
-  bot.mowojang = new MowojangClient();
-  bot.hypixel = {
-    proxy: {
-      ip: undefined,
-      port: undefined,
-      latency: undefined,
-    },
-    location: {},
-  } as Bot["hypixel"];
+export const HyFlayer = (options?: PluginOptions) => {
+  const mowojang = options?.mowojang ?? new MowojangClient();
 
-  /* Functions */
-  bot.sendGuildMessage = (msg: string) => sendGuildMessage(bot, msg);
-  bot.sendGuildOfficerMessage = (msg: string) => sendGuildOfficerMessage(bot, msg);
-  bot.toggleGuildSlowChat = () => toggleGuildSlowChat(bot);
-  bot.muteGuildChat = (duration: GuildMuteDurations) => muteGuildChat(bot, duration);
-  bot.muteGuildMember = (member: string, duration: GuildMuteDurations) => muteGuildMember(bot, member, duration);
-  bot.unmuteGuildChat = () => unmuteGuildChat(bot);
-  bot.unmuteGuildMember = (member: string) => unmuteGuildMember(bot, member);
-  bot.sendPrivateMessage = (player: string, msg: string) => sendPrivateMessage(bot, player, msg);
-  bot.sendSkyblockCoopMessage = (msg: string) => sendSkyblockCoopMessage(bot, msg);
+  return (bot: Bot): void => {
+    /* Structures */
+    bot.mowojang = mowojang;
+    bot.hypixel = {
+      proxy: {
+        ip: undefined,
+        port: undefined,
+        latency: undefined,
+      },
+      location: {},
+    } as Bot["hypixel"];
 
-  /* Proxy Parsing */
-  bot.once("login", () => {
-    bot.hypixel.proxy = {
-      ip: bot._client?.socket?.remoteAddress,
-      port: bot._client?.socket?.remotePort,
-      latency: bot?.player?.ping || undefined,
-    };
-    setInterval(() => {
-      bot.hypixel.proxy.latency = bot?.player?.ping || undefined;
-    }, 60000);
-  });
+    /* Functions */
+    bot.sendGuildMessage = (msg: string) => sendGuildMessage(bot, msg);
+    bot.sendGuildOfficerMessage = (msg: string) => sendGuildOfficerMessage(bot, msg);
+    bot.toggleGuildSlowChat = () => toggleGuildSlowChat(bot);
+    bot.muteGuildChat = (duration: GuildMuteDurations) => muteGuildChat(bot, duration);
+    bot.muteGuildMember = (member: string, duration: GuildMuteDurations) => muteGuildMember(bot, member, duration);
+    bot.unmuteGuildChat = () => unmuteGuildChat(bot);
+    bot.unmuteGuildMember = (member: string) => unmuteGuildMember(bot, member);
+    bot.sendPrivateMessage = (player: string, msg: string) => sendPrivateMessage(bot, player, msg);
+    bot.sendSkyblockCoopMessage = (msg: string) => sendSkyblockCoopMessage(bot, msg);
 
-  /* Location Parsing */
-  parseLocation(bot);
-  bot.once("spawn", () => getLocation(bot));
-  bot.on("respawn", () => getLocation(bot));
+    /* Proxy Parsing */
+    bot.once("login", () => {
+      bot.hypixel.proxy = {
+        ip: bot._client?.socket?.remoteAddress,
+        port: bot._client?.socket?.remotePort,
+        latency: bot?.player?.ping || undefined,
+      };
+      setInterval(() => {
+        bot.hypixel.proxy.latency = bot?.player?.ping || undefined;
+      }, 60000);
+    });
 
-  /* Chat Parsers */
-  parsePrivateChat(bot);
-  parseSkyblockCoopChat(bot);
-  parseGuildChat(bot);
-  parseGuildEvents(bot);
+    /* Location Parsing */
+    parseLocation(bot);
+    bot.once("spawn", () => getLocation(bot));
+    bot.on("respawn", () => getLocation(bot));
+
+    /* Chat Parsers */
+    parsePrivateChat(bot);
+    parseSkyblockCoopChat(bot);
+    parseGuildChat(bot);
+    parseGuildEvents(bot);
+  };
 };

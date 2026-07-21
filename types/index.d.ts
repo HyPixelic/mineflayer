@@ -1,6 +1,10 @@
 import type { Bot as MineflayerBot, BotEvents as MineflayerBotEvents } from "mineflayer";
 import type { Client as MowojangClient } from "mowojang";
 
+export interface PluginOptions {
+  mowojang?: MowojangClient;
+}
+
 /**
  * HyFlayer Location Event, this Event is emitted everytime the Mineflayer Bot detects a "spawn" or "respawn" Event.
  *

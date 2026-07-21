@@ -38,7 +38,7 @@ import type { Bot, GuildMuteDurations, PluginOptions } from "../types/index.d.ts
  * bot.loadPlugin(hyflayer);
  * ```
  */
-export const HyFlayer = (options?: PluginOptions) => {
+export const HyFlayer = (options?: PluginOptions): ((bot: Bot) => void) => {
   const mowojang = options?.mowojang ?? new MowojangClient();
 
   return (bot: Bot): void => {

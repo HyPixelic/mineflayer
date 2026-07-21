@@ -23,8 +23,10 @@ const bot = mineflayer.createBot({
   version: "1.8.9",
 }) as HyFlayerBot
 
+const hyflayer = HyFlayer()
+
 // @ts-expect-error
-bot.loadPlugin(HyFlayer);
+bot.loadPlugin(hyflayer);
 
 bot.on("HYFLAYER_GUILD_CHAT", (event) => {
   /*

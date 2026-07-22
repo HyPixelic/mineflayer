@@ -1,5 +1,8 @@
 # HyPixelic/mineflayer (Hyflayer)
 
+![Version](https://jsr.io/badges/@hypixelic/mineflayer)
+![Downloads](https://jsr.io/badges/@hypixelic/mineflayer/total-downloads)
+
 > [!CAUTION]
 > Using Mineflayer and an Minecraft Account to log into Hypixel as a Bot violates Hypixels [Terms of Service](https://hypixel.net/terms).<br/> This may get your Minecraft Account banned if abused for non chat related things that give you an unfair advantage.
 

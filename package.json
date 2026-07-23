@@ -9,7 +9,7 @@
     "prettier:write": "pnpm dlx prettier . --write"
   },
   "dependencies": {
-    "mowojang": "^0.4.8"
+    "mowojang": "^0.4.9"
   },
   "peerDependencies": {
     "mineflayer": "^4.34.0"

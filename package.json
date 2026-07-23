@@ -15,7 +15,7 @@
     "mineflayer": "^4.34.0"
   },
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "engines": {
     "node": ">=22.0.0"

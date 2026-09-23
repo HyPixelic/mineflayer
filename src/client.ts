@@ -37,7 +37,7 @@ import {
   listIgnores,
 } from "./modules/index.js";
 
-import type { Bot, GuildMuteDurations, PluginOptions } from "../types/index.d.ts";
+import type { Bot, GuildMuteDurations, HyFlayerPluginOptions } from "../types/index.d.ts";
 
 /**
  * Injects the HyFlayer Plugin into a Mineflayer Bot
@@ -58,7 +58,7 @@ import type { Bot, GuildMuteDurations, PluginOptions } from "../types/index.d.ts
  * bot.loadPlugin(hyflayer);
  * ```
  */
-export const HyFlayer = (options?: PluginOptions): ((bot: Bot) => void) => {
+export const HyFlayer = (options?: HyFlayerPluginOptions): ((bot: Bot) => void) => {
   const mowojang = options?.mowojang ?? new MowojangClient();
 
   return (bot: Bot): void => {

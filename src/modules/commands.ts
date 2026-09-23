@@ -29,11 +29,19 @@ export const addFriend = (bot: Bot, player: string): void => {
   sendHypixelCommand(bot, "f", ["add", player]);
 };
 
+export const denyFriend = (bot: Bot): void => {
+  sendHypixelCommand(bot, "f", ["deny"]);
+};
+
 export const removeFriend = (bot: Bot, player: string): void => {
   sendHypixelCommand(bot, "f", ["remove", player]);
 };
 
-export const listFriends = (bot: Bot): void => {
+export const removeAllFriends = (bot: Bot): void => {
+  sendHypixelCommand(bot, "f", ["removeall"]);
+};
+
+export const getFriends = (bot: Bot): void => {
   sendHypixelCommand(bot, "fl");
 };
 
@@ -49,7 +57,19 @@ export const leaveParty = (bot: Bot): void => {
   sendHypixelCommand(bot, "p", ["leave"]);
 };
 
-export const listPartyMembers = (bot: Bot): void => {
+export const disbandParty = (bot: Bot): void => {
+  sendHypixelCommand(bot, "p", ["disband"]);
+};
+
+export const kickOfflinePartyMembers = (bot: Bot): void => {
+  sendHypixelCommand(bot, "p", ["kickoffline"]);
+};
+
+export const warpParty = (bot: Bot): void => {
+  sendHypixelCommand(bot, "p", ["warp"]);
+};
+
+export const getPartyMembers = (bot: Bot): void => {
   sendHypixelCommand(bot, "p", ["list"]);
 };
 
@@ -65,6 +85,22 @@ export const removeIgnore = (bot: Bot, player: string): void => {
   sendHypixelCommand(bot, "ignore", ["remove", player]);
 };
 
-export const listIgnores = (bot: Bot): void => {
+export const getIgnores = (bot: Bot): void => {
   sendHypixelCommand(bot, "ignore", ["list"]);
+};
+
+export const boop = (bot: Bot, player: string): void => {
+  sendHypixelCommand(bot, "boop", [player]);
+};
+
+export const cookie = (bot: Bot, player: string): void => {
+  sendHypixelCommand(bot, "cookie", [player]);
+};
+
+export const hug = (bot: Bot, player: string): void => {
+  sendHypixelCommand(bot, "hug", [player]);
+};
+
+export const lobby = (bot: Bot, lobbyName?: string): void => {
+  sendHypixelCommand(bot, "lobby", lobbyName ? [lobbyName] : []);
 };

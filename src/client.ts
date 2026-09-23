@@ -25,16 +25,25 @@ import {
   sendHypixelCommand,
   replyToPrivateMessage,
   addFriend,
+  denyFriend,
   removeFriend,
-  listFriends,
+  removeAllFriends,
+  getFriends,
   inviteToParty,
   removeFromParty,
   leaveParty,
-  listPartyMembers,
+  disbandParty,
+  kickOfflinePartyMembers,
+  warpParty,
+  getPartyMembers,
   sendPartyMessage,
   addIgnore,
   removeIgnore,
-  listIgnores,
+  getIgnores,
+  boop,
+  cookie,
+  hug,
+  lobby,
 } from "./modules/index.js";
 
 import type { Bot, GuildMuteDurations, HyFlayerPluginOptions } from "../types/index.d.ts";
@@ -91,16 +100,25 @@ export const HyFlayer = (options?: HyFlayerPluginOptions): ((bot: Bot) => void) 
     bot.sendPrivateMessage = (player: string, msg: string) => sendPrivateMessage(bot, player, msg);
     bot.replyToPrivateMessage = (msg: string) => replyToPrivateMessage(bot, msg);
     bot.addFriend = (player: string) => addFriend(bot, player);
+    bot.denyFriend = () => denyFriend(bot);
     bot.removeFriend = (player: string) => removeFriend(bot, player);
-    bot.listFriends = () => listFriends(bot);
+    bot.removeAllFriends = () => removeAllFriends(bot);
+    bot.getFriends = () => getFriends(bot);
     bot.inviteToParty = (player: string) => inviteToParty(bot, player);
     bot.removeFromParty = (player: string) => removeFromParty(bot, player);
     bot.leaveParty = () => leaveParty(bot);
-    bot.listPartyMembers = () => listPartyMembers(bot);
+    bot.disbandParty = () => disbandParty(bot);
+    bot.kickOfflinePartyMembers = () => kickOfflinePartyMembers(bot);
+    bot.warpParty = () => warpParty(bot);
+    bot.getPartyMembers = () => getPartyMembers(bot);
     bot.sendPartyMessage = (msg: string) => sendPartyMessage(bot, msg);
     bot.addIgnore = (player: string) => addIgnore(bot, player);
     bot.removeIgnore = (player: string) => removeIgnore(bot, player);
-    bot.listIgnores = () => listIgnores(bot);
+    bot.getIgnores = () => getIgnores(bot);
+    bot.boop = (player: string) => boop(bot, player);
+    bot.cookie = (player: string) => cookie(bot, player);
+    bot.hug = (player: string) => hug(bot, player);
+    bot.lobby = (lobbyName?: string) => lobby(bot, lobbyName);
     bot.sendHypixelCommand = (command: string, args?: readonly string[]) => sendHypixelCommand(bot, command, args);
     bot.sendSkyblockCoopMessage = (msg: string) => sendSkyblockCoopMessage(bot, msg);
 

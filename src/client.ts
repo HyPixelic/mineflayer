@@ -15,6 +15,26 @@ import {
   muteGuildMember,
   unmuteGuildChat,
   unmuteGuildMember,
+  getGuildInfo,
+  getGuildMembers,
+  getGuildMember,
+  inviteToGuild,
+  kickFromGuild,
+  promoteGuildMember,
+  demoteGuildMember,
+  sendHypixelCommand,
+  replyToPrivateMessage,
+  addFriend,
+  removeFriend,
+  listFriends,
+  inviteToParty,
+  removeFromParty,
+  leaveParty,
+  listPartyMembers,
+  sendPartyMessage,
+  addIgnore,
+  removeIgnore,
+  listIgnores,
 } from "./modules/index.js";
 
 import type { Bot, GuildMuteDurations, PluginOptions } from "../types/index.d.ts";
@@ -61,7 +81,27 @@ export const HyFlayer = (options?: PluginOptions): ((bot: Bot) => void) => {
     bot.muteGuildMember = (member: string, duration: GuildMuteDurations) => muteGuildMember(bot, member, duration);
     bot.unmuteGuildChat = () => unmuteGuildChat(bot);
     bot.unmuteGuildMember = (member: string) => unmuteGuildMember(bot, member);
+    bot.getGuildInfo = () => getGuildInfo(bot);
+    bot.getGuildMembers = () => getGuildMembers(bot);
+    bot.getGuildMember = (member: string) => getGuildMember(bot, member);
+    bot.inviteToGuild = (member: string) => inviteToGuild(bot, member);
+    bot.kickFromGuild = (member: string) => kickFromGuild(bot, member);
+    bot.promoteGuildMember = (member: string) => promoteGuildMember(bot, member);
+    bot.demoteGuildMember = (member: string) => demoteGuildMember(bot, member);
     bot.sendPrivateMessage = (player: string, msg: string) => sendPrivateMessage(bot, player, msg);
+    bot.replyToPrivateMessage = (msg: string) => replyToPrivateMessage(bot, msg);
+    bot.addFriend = (player: string) => addFriend(bot, player);
+    bot.removeFriend = (player: string) => removeFriend(bot, player);
+    bot.listFriends = () => listFriends(bot);
+    bot.inviteToParty = (player: string) => inviteToParty(bot, player);
+    bot.removeFromParty = (player: string) => removeFromParty(bot, player);
+    bot.leaveParty = () => leaveParty(bot);
+    bot.listPartyMembers = () => listPartyMembers(bot);
+    bot.sendPartyMessage = (msg: string) => sendPartyMessage(bot, msg);
+    bot.addIgnore = (player: string) => addIgnore(bot, player);
+    bot.removeIgnore = (player: string) => removeIgnore(bot, player);
+    bot.listIgnores = () => listIgnores(bot);
+    bot.sendHypixelCommand = (command: string, args?: readonly string[]) => sendHypixelCommand(bot, command, args);
     bot.sendSkyblockCoopMessage = (msg: string) => sendSkyblockCoopMessage(bot, msg);
 
     /* Proxy Parsing */

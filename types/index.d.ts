@@ -55,6 +55,8 @@ export interface PlayerChatEvent extends PlayerEvent {
 
 export type GuildMuteDurations = "5m" | "15m" | "30m" | "1h" | "3h" | "6h" | "12h" | "1d" | "3d" | "5d" | "7d" | string;
 
+export type CommandArguments = readonly string[];
+
 /**
  * Extendes the basic Mineflayer Bot interface provided by the mineflayer library.
  */
@@ -75,7 +77,27 @@ export interface Bot extends MineflayerBot {
   muteGuildMember: (member: string, duration: GuildMuteDurations) => void;
   unmuteGuildChat: () => void;
   unmuteGuildMember: (member: string) => void;
+  getGuildInfo: () => void;
+  getGuildMembers: () => void;
+  getGuildMember: (member: string) => void;
+  inviteToGuild: (member: string) => void;
+  kickFromGuild: (member: string) => void;
+  promoteGuildMember: (member: string) => void;
+  demoteGuildMember: (member: string) => void;
   sendPrivateMessage: (player: string, msg: string) => void;
+  replyToPrivateMessage: (msg: string) => void;
+  addFriend: (player: string) => void;
+  removeFriend: (player: string) => void;
+  listFriends: () => void;
+  inviteToParty: (player: string) => void;
+  removeFromParty: (player: string) => void;
+  leaveParty: () => void;
+  listPartyMembers: () => void;
+  sendPartyMessage: (msg: string) => void;
+  addIgnore: (player: string) => void;
+  removeIgnore: (player: string) => void;
+  listIgnores: () => void;
+  sendHypixelCommand: (command: string, args?: CommandArguments) => void;
   sendSkyblockCoopMessage: (msg: string) => void;
   on<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;
   once<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;

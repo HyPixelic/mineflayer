@@ -1,5 +1,5 @@
 import type { Bot, GuildMuteDurations } from "../../types/index.d.ts";
-import { sendHypixelCommand } from "./commands.js";
+import { commands } from "./commands.js";
 
 export const parseGuildChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_guild_chat", /^Guild > .*:.*/);
@@ -117,29 +117,29 @@ export const unmuteGuildMember = (bot: Bot, player: string) => {
 };
 
 export const getGuildInfo = (bot: Bot): void => {
-  sendHypixelCommand(bot, "g", ["info"]);
+  commands.sendHypixelCommand(bot, "g", ["info"]);
 };
 
 export const getGuildMembers = (bot: Bot): void => {
-  sendHypixelCommand(bot, "g", ["list"]);
+  commands.sendHypixelCommand(bot, "g", ["list"]);
 };
 
 export const getGuildMember = (bot: Bot, player: string): void => {
-  sendHypixelCommand(bot, "g", ["member", player]);
+  commands.sendHypixelCommand(bot, "g", ["member", player]);
 };
 
 export const inviteToGuild = (bot: Bot, player: string): void => {
-  sendHypixelCommand(bot, "g", ["invite", player]);
+  commands.sendHypixelCommand(bot, "g", ["invite", player]);
 };
 
 export const kickFromGuild = (bot: Bot, player: string): void => {
-  sendHypixelCommand(bot, "g", ["kick", player]);
+  commands.sendHypixelCommand(bot, "g", ["kick", player]);
 };
 
 export const promoteGuildMember = (bot: Bot, player: string): void => {
-  sendHypixelCommand(bot, "g", ["promote", player]);
+  commands.sendHypixelCommand(bot, "g", ["promote", player]);
 };
 
 export const demoteGuildMember = (bot: Bot, player: string): void => {
-  sendHypixelCommand(bot, "g", ["demote", player]);
+  commands.sendHypixelCommand(bot, "g", ["demote", player]);
 };

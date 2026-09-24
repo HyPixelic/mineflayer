@@ -46,7 +46,7 @@ bot.on("HYFLAYER_GUILD_CHAT", (event) => {
 
 ## Commands
 
-Commands are available through the bound `bot.commands` namespace:
+Commands are available through the `bot.commands` object:
 
 ```TS
 bot.commands.inviteToParty("Pixelic");

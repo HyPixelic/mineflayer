@@ -22,6 +22,7 @@ import {
   replyToPrivateMessage,
   sendHypixelCommand,
   sendPartyMessage,
+  toggleChat,
   warpParty,
 } from "../dist/src/modules/commands.js";
 
@@ -85,7 +86,9 @@ describe("sendHypixelCommand()", function () {
       { expected: "/cookie Pixelic", command: cookie, args: ["Pixelic"] },
       { expected: "/hug Pixelic", command: hug, args: ["Pixelic"] },
       { expected: "/lobby prototype", command: lobby, args: ["prototype"] },
+      { expected: "/lobby SkyBlock", command: lobby, args: ["SkyBlock"] },
       { expected: "/lobby", command: lobby },
+      { expected: "/togglechat", command: toggleChat },
     ];
 
     for (const { expected, command, args } of commands) {

@@ -44,9 +44,10 @@ import {
   cookie,
   hug,
   lobby,
+  toggleChat,
 } from "./modules/index.js";
 
-import type { Bot, GuildMuteDurations, HyFlayerPluginOptions } from "../types/index.d.ts";
+import type { Bot, GuildMuteDurations, HyFlayerPluginOptions, LobbyName } from "../types/index.d.ts";
 
 /**
  * Injects the HyFlayer Plugin into a Mineflayer Bot
@@ -118,7 +119,8 @@ export const HyFlayer = (options?: HyFlayerPluginOptions): ((bot: Bot) => void) 
     bot.boop = (player: string) => boop(bot, player);
     bot.cookie = (player: string) => cookie(bot, player);
     bot.hug = (player: string) => hug(bot, player);
-    bot.lobby = (lobbyName?: string) => lobby(bot, lobbyName);
+    bot.lobby = (lobbyName?: LobbyName) => lobby(bot, lobbyName);
+    bot.toggleChat = () => toggleChat(bot);
     bot.sendHypixelCommand = (command: string, args?: readonly string[]) => sendHypixelCommand(bot, command, args);
     bot.sendSkyblockCoopMessage = (msg: string) => sendSkyblockCoopMessage(bot, msg);
 

@@ -1,4 +1,4 @@
-import type { Bot } from "../../types/index.d.ts";
+import type { Bot, LobbyName } from "../../types/index.d.ts";
 
 const validateArgument = (arg: string): boolean => !/[\u0000-\u001f\u007f]/.test(arg);
 
@@ -101,6 +101,10 @@ export const hug = (bot: Bot, player: string): void => {
   sendHypixelCommand(bot, "hug", [player]);
 };
 
-export const lobby = (bot: Bot, lobbyName?: string): void => {
+export const lobby = (bot: Bot, lobbyName?: LobbyName): void => {
   sendHypixelCommand(bot, "lobby", lobbyName ? [lobbyName] : []);
+};
+
+export const toggleChat = (bot: Bot): void => {
+  sendHypixelCommand(bot, "togglechat");
 };

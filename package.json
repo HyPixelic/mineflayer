@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "pnpm tsc",
-    "test": "node --env-file=.env test/index.js",
+    "test": "pnpm build && node --test test/commands.js",
+    "test:live": "node --env-file=.env test/index.js",
     "prettier:check": "pnpm dlx prettier . --check",
     "prettier:write": "pnpm dlx prettier . --write"
   },

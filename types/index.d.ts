@@ -164,12 +164,39 @@ export type LobbyName =
   | "copsandcrims"
   | (string & {});
 
-export type CommandArguments = readonly string[];
+export type HyFlayerCommandArguments = readonly string[];
+
+export interface HyFlayerCommands {
+  sendHypixelCommand: (command: string, args?: HyFlayerCommandArguments) => void;
+  replyToPrivateMessage: (msg: string) => void;
+  addFriend: (player: string) => void;
+  denyFriend: () => void;
+  removeFriend: (player: string) => void;
+  removeAllFriends: () => void;
+  getFriends: () => void;
+  inviteToParty: (player: string) => void;
+  removeFromParty: (player: string) => void;
+  leaveParty: () => void;
+  disbandParty: () => void;
+  kickOfflinePartyMembers: () => void;
+  warpParty: () => void;
+  getPartyMembers: () => void;
+  sendPartyMessage: (msg: string) => void;
+  addIgnore: (player: string) => void;
+  removeIgnore: (player: string) => void;
+  getIgnores: () => void;
+  boop: (player: string) => void;
+  cookie: (player: string) => void;
+  hug: (player: string) => void;
+  lobby: (lobbyName?: LobbyName) => void;
+  toggleChat: () => void;
+}
 
 /**
  * Extends the basic Mineflayer Bot interface provided by the mineflayer library.
  */
 export interface Bot extends MineflayerBot {
+  commands: HyFlayerCommands;
   mowojang: MowojangClient;
   hypixel: {
     proxy: {
@@ -216,7 +243,7 @@ export interface Bot extends MineflayerBot {
   hug: (player: string) => void;
   lobby: (lobbyName?: LobbyName) => void;
   toggleChat: () => void;
-  sendHypixelCommand: (command: string, args?: CommandArguments) => void;
+  sendHypixelCommand: Commands["sendHypixelCommand"];
   sendSkyblockCoopMessage: (msg: string) => void;
   on<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;
   once<U extends keyof BotEvents>(event: U, listener: BotEvents[U]): this;

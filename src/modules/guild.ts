@@ -89,57 +89,57 @@ export const parseGuildEvents = (bot: Bot) => {
 };
 
 export const sendGuildMessage = (bot: Bot, msg: string) => {
-  bot.chat(`/gc ${msg}`);
+  commands.sendGuildMessage(bot, msg);
 };
 
 export const sendGuildOfficerMessage = (bot: Bot, msg: string) => {
-  bot.chat(`/oc ${msg}`);
+  commands.sendGuildOfficerMessage(bot, msg);
 };
 
 export const toggleGuildSlowChat = (bot: Bot) => {
-  bot.chat(`/g slow`);
+  commands.toggleGuildSlowChat(bot);
 };
 
 export const muteGuildChat = (bot: Bot, duration: GuildMuteDurations) => {
-  bot.chat(`/g mute everyone ${duration}`);
+  commands.muteGuildChat(bot, duration);
 };
 
 export const muteGuildMember = (bot: Bot, player: string, duration: GuildMuteDurations) => {
-  bot.chat(`/g mute ${player} ${duration}`);
+  commands.muteGuildMember(bot, player, duration);
 };
 
 export const unmuteGuildChat = (bot: Bot) => {
-  bot.chat(`/g unmute everyone`);
+  commands.unmuteGuildChat(bot);
 };
 
 export const unmuteGuildMember = (bot: Bot, player: string) => {
-  bot.chat(`/g unmute ${player}`);
+  commands.unmuteGuildMember(bot, player);
 };
 
 export const getGuildInfo = (bot: Bot): void => {
-  commands.sendHypixelCommand(bot, "g", ["info"]);
+  commands.getGuildInfo(bot);
 };
 
 export const getGuildMembers = (bot: Bot): void => {
-  commands.sendHypixelCommand(bot, "g", ["list"]);
+  commands.getGuildMembers(bot);
 };
 
 export const getGuildMember = (bot: Bot, player: string): void => {
-  commands.sendHypixelCommand(bot, "g", ["member", player]);
+  commands.getGuildMember(bot, player);
 };
 
 export const inviteToGuild = (bot: Bot, player: string): void => {
-  commands.sendHypixelCommand(bot, "g", ["invite", player]);
+  commands.inviteToGuild(bot, player);
 };
 
 export const kickFromGuild = (bot: Bot, player: string): void => {
-  commands.sendHypixelCommand(bot, "g", ["kick", player]);
+  commands.kickFromGuild(bot, player);
 };
 
 export const promoteGuildMember = (bot: Bot, player: string): void => {
-  commands.sendHypixelCommand(bot, "g", ["promote", player]);
+  commands.promoteGuildMember(bot, player);
 };
 
 export const demoteGuildMember = (bot: Bot, player: string): void => {
-  commands.sendHypixelCommand(bot, "g", ["demote", player]);
+  commands.demoteGuildMember(bot, player);
 };

@@ -65,6 +65,22 @@ describe("sendHypixelCommand()", function () {
       { expected: "/lobby SkyBlock", command: commands.lobby, args: ["SkyBlock"] },
       { expected: "/lobby", command: commands.lobby },
       { expected: "/togglechat", command: commands.toggleChat },
+      { expected: "/gc hello guild", command: commands.sendGuildMessage, args: ["hello guild"] },
+      { expected: "/oc hello officers", command: commands.sendGuildOfficerMessage, args: ["hello officers"] },
+      { expected: "/g slow", command: commands.toggleGuildSlowChat },
+      { expected: "/g mute everyone 1h", command: commands.muteGuildChat, args: ["1h"] },
+      { expected: "/g mute Pixelic 1h", command: commands.muteGuildMember, args: ["Pixelic", "1h"] },
+      { expected: "/g unmute everyone", command: commands.unmuteGuildChat },
+      { expected: "/g unmute Pixelic", command: commands.unmuteGuildMember, args: ["Pixelic"] },
+      { expected: "/g info", command: commands.getGuildInfo },
+      { expected: "/g list", command: commands.getGuildMembers },
+      { expected: "/g member Pixelic", command: commands.getGuildMember, args: ["Pixelic"] },
+      { expected: "/g invite Pixelic", command: commands.inviteToGuild, args: ["Pixelic"] },
+      { expected: "/g kick Pixelic", command: commands.kickFromGuild, args: ["Pixelic"] },
+      { expected: "/g promote Pixelic", command: commands.promoteGuildMember, args: ["Pixelic"] },
+      { expected: "/g demote Pixelic", command: commands.demoteGuildMember, args: ["Pixelic"] },
+      { expected: "/msg Pixelic hello", command: commands.sendPrivateMessage, args: ["Pixelic", "hello"] },
+      { expected: "/coop hello", command: commands.sendSkyblockCoopMessage, args: ["hello"] },
     ];
 
     for (const { expected, command, args } of commandCases) {

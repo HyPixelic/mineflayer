@@ -1,4 +1,4 @@
-import type { Bot, LobbyName } from "../../types/index.d.ts";
+import type { Bot, GuildMuteDurations, LobbyName } from "../../types/index.d.ts";
 
 const validateArgument = (arg: string): boolean => !/[\u0000-\u001f\u007f]/.test(arg);
 
@@ -109,6 +109,70 @@ const toggleChat = (bot: Bot): void => {
   sendHypixelCommand(bot, "togglechat");
 };
 
+const sendGuildMessage = (bot: Bot, message: string): void => {
+  sendHypixelCommand(bot, "gc", [message]);
+};
+
+const sendGuildOfficerMessage = (bot: Bot, message: string): void => {
+  sendHypixelCommand(bot, "oc", [message]);
+};
+
+const toggleGuildSlowChat = (bot: Bot): void => {
+  sendHypixelCommand(bot, "g", ["slow"]);
+};
+
+const muteGuildChat = (bot: Bot, duration: GuildMuteDurations): void => {
+  sendHypixelCommand(bot, "g", ["mute", "everyone", duration]);
+};
+
+const muteGuildMember = (bot: Bot, member: string, duration: GuildMuteDurations): void => {
+  sendHypixelCommand(bot, "g", ["mute", member, duration]);
+};
+
+const unmuteGuildChat = (bot: Bot): void => {
+  sendHypixelCommand(bot, "g", ["unmute", "everyone"]);
+};
+
+const unmuteGuildMember = (bot: Bot, member: string): void => {
+  sendHypixelCommand(bot, "g", ["unmute", member]);
+};
+
+const getGuildInfo = (bot: Bot): void => {
+  sendHypixelCommand(bot, "g", ["info"]);
+};
+
+const getGuildMembers = (bot: Bot): void => {
+  sendHypixelCommand(bot, "g", ["list"]);
+};
+
+const getGuildMember = (bot: Bot, member: string): void => {
+  sendHypixelCommand(bot, "g", ["member", member]);
+};
+
+const inviteToGuild = (bot: Bot, member: string): void => {
+  sendHypixelCommand(bot, "g", ["invite", member]);
+};
+
+const kickFromGuild = (bot: Bot, member: string): void => {
+  sendHypixelCommand(bot, "g", ["kick", member]);
+};
+
+const promoteGuildMember = (bot: Bot, member: string): void => {
+  sendHypixelCommand(bot, "g", ["promote", member]);
+};
+
+const demoteGuildMember = (bot: Bot, member: string): void => {
+  sendHypixelCommand(bot, "g", ["demote", member]);
+};
+
+const sendPrivateMessage = (bot: Bot, player: string, message: string): void => {
+  sendHypixelCommand(bot, "msg", [player, message]);
+};
+
+const sendSkyblockCoopMessage = (bot: Bot, message: string): void => {
+  sendHypixelCommand(bot, "coop", [message]);
+};
+
 export const commands = {
   sendHypixelCommand,
   replyToPrivateMessage,
@@ -133,4 +197,20 @@ export const commands = {
   hug,
   lobby,
   toggleChat,
+  sendGuildMessage,
+  sendGuildOfficerMessage,
+  toggleGuildSlowChat,
+  muteGuildChat,
+  muteGuildMember,
+  unmuteGuildChat,
+  unmuteGuildMember,
+  getGuildInfo,
+  getGuildMembers,
+  getGuildMember,
+  inviteToGuild,
+  kickFromGuild,
+  promoteGuildMember,
+  demoteGuildMember,
+  sendPrivateMessage,
+  sendSkyblockCoopMessage,
 };

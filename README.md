@@ -54,12 +54,12 @@ bot.commands.inviteToParty("Pixelic");
 
 ### Messaging
 
-- `bot.sendPrivateMessage(player, message)`
+- `bot.commands.sendPrivateMessage(player, message)`
 - `bot.commands.replyToPrivateMessage(message)`
 - `bot.commands.sendPartyMessage(message)`
-- `bot.sendGuildMessage(message)`
-- `bot.sendGuildOfficerMessage(message)`
-- `bot.sendSkyblockCoopMessage(message)`
+- `bot.commands.sendGuildMessage(message)`
+- `bot.commands.sendGuildOfficerMessage(message)`
+- `bot.commands.sendSkyblockCoopMessage(message)`
 
 ### Friends
 
@@ -81,20 +81,20 @@ bot.commands.inviteToParty("Pixelic");
 
 ### Guild
 
-- `bot.sendGuildMessage(message)`
-- `bot.sendGuildOfficerMessage(message)`
-- `bot.toggleGuildSlowChat()`
-- `bot.muteGuildChat(duration)`
-- `bot.muteGuildMember(member, duration)`
-- `bot.unmuteGuildChat()`
-- `bot.unmuteGuildMember(member)`
-- `bot.getGuildInfo()`
-- `bot.getGuildMembers()`
-- `bot.getGuildMember(member)`
-- `bot.inviteToGuild(member)`
-- `bot.kickFromGuild(member)`
-- `bot.promoteGuildMember(member)`
-- `bot.demoteGuildMember(member)`
+- `bot.commands.sendGuildMessage(message)`
+- `bot.commands.sendGuildOfficerMessage(message)`
+- `bot.commands.toggleGuildSlowChat()`
+- `bot.commands.muteGuildChat(duration)`
+- `bot.commands.muteGuildMember(member, duration)`
+- `bot.commands.unmuteGuildChat()`
+- `bot.commands.unmuteGuildMember(member)`
+- `bot.commands.getGuildInfo()`
+- `bot.commands.getGuildMembers()`
+- `bot.commands.getGuildMember(member)`
+- `bot.commands.inviteToGuild(member)`
+- `bot.commands.kickFromGuild(member)`
+- `bot.commands.promoteGuildMember(member)`
+- `bot.commands.demoteGuildMember(member)`
 
 ### Ignore List
 

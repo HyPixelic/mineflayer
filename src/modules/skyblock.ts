@@ -1,4 +1,5 @@
 import type { Bot } from "../../types/index.d.ts";
+import { commands } from "./commands.js";
 
 export const parseSkyblockCoopChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_skyblock_coop_chat", /^Co-op > .*/);
@@ -25,5 +26,5 @@ export const parseSkyblockCoopChat = (bot: Bot) => {
 };
 
 export const sendSkyblockCoopMessage = (bot: Bot, msg: string) => {
-  bot.chat(`/coop ${msg}`);
+  commands.sendSkyblockCoopMessage(bot, msg);
 };

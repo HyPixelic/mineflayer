@@ -190,6 +190,22 @@ export interface HyFlayerCommands {
   hug: (player: string) => void;
   lobby: (lobbyName?: LobbyName) => void;
   toggleChat: () => void;
+  sendGuildMessage: (msg: string) => void;
+  sendGuildOfficerMessage: (msg: string) => void;
+  toggleGuildSlowChat: () => void;
+  muteGuildChat: (duration: GuildMuteDurations) => void;
+  muteGuildMember: (member: string, duration: GuildMuteDurations) => void;
+  unmuteGuildChat: () => void;
+  unmuteGuildMember: (member: string) => void;
+  getGuildInfo: () => void;
+  getGuildMembers: () => void;
+  getGuildMember: (member: string) => void;
+  inviteToGuild: (member: string) => void;
+  kickFromGuild: (member: string) => void;
+  promoteGuildMember: (member: string) => void;
+  demoteGuildMember: (member: string) => void;
+  sendPrivateMessage: (player: string, msg: string) => void;
+  sendSkyblockCoopMessage: (msg: string) => void;
 }
 
 /**

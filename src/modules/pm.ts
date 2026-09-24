@@ -1,4 +1,5 @@
 import type { Bot } from "../../types/index.d.ts";
+import { commands } from "./commands.js";
 
 export const parsePrivateChat = (bot: Bot) => {
   bot.addChatPattern("hypixel_private_chat", /^From .*/);
@@ -25,5 +26,5 @@ export const parsePrivateChat = (bot: Bot) => {
 };
 
 export const sendPrivateMessage = (bot: Bot, player: string, msg: string) => {
-  bot.chat(`/msg ${player} ${msg}`);
+  commands.sendPrivateMessage(bot, player, msg);
 };

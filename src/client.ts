@@ -6,22 +6,6 @@ import {
   parseGuildEvents,
   parsePrivateChat,
   parseSkyblockCoopChat,
-  sendGuildMessage,
-  sendPrivateMessage,
-  sendSkyblockCoopMessage,
-  sendGuildOfficerMessage,
-  toggleGuildSlowChat,
-  muteGuildChat,
-  muteGuildMember,
-  unmuteGuildChat,
-  unmuteGuildMember,
-  getGuildInfo,
-  getGuildMembers,
-  getGuildMember,
-  inviteToGuild,
-  kickFromGuild,
-  promoteGuildMember,
-  demoteGuildMember,
   commands,
 } from "./modules/index.js";
 
@@ -86,22 +70,39 @@ export const HyFlayer = (options?: HyFlayerPluginOptions): ((bot: Bot) => void) 
       hug: (player) => commands.hug(bot, player),
       lobby: (lobbyName) => commands.lobby(bot, lobbyName),
       toggleChat: () => commands.toggleChat(bot),
+      sendGuildMessage: (msg) => commands.sendGuildMessage(bot, msg),
+      sendGuildOfficerMessage: (msg) => commands.sendGuildOfficerMessage(bot, msg),
+      toggleGuildSlowChat: () => commands.toggleGuildSlowChat(bot),
+      muteGuildChat: (duration) => commands.muteGuildChat(bot, duration),
+      muteGuildMember: (member, duration) => commands.muteGuildMember(bot, member, duration),
+      unmuteGuildChat: () => commands.unmuteGuildChat(bot),
+      unmuteGuildMember: (member) => commands.unmuteGuildMember(bot, member),
+      getGuildInfo: () => commands.getGuildInfo(bot),
+      getGuildMembers: () => commands.getGuildMembers(bot),
+      getGuildMember: (member) => commands.getGuildMember(bot, member),
+      inviteToGuild: (member) => commands.inviteToGuild(bot, member),
+      kickFromGuild: (member) => commands.kickFromGuild(bot, member),
+      promoteGuildMember: (member) => commands.promoteGuildMember(bot, member),
+      demoteGuildMember: (member) => commands.demoteGuildMember(bot, member),
+      sendPrivateMessage: (player, msg) => commands.sendPrivateMessage(bot, player, msg),
+      sendSkyblockCoopMessage: (msg) => commands.sendSkyblockCoopMessage(bot, msg),
     };
-    bot.sendGuildMessage = (msg: string) => sendGuildMessage(bot, msg);
-    bot.sendGuildOfficerMessage = (msg: string) => sendGuildOfficerMessage(bot, msg);
-    bot.toggleGuildSlowChat = () => toggleGuildSlowChat(bot);
-    bot.muteGuildChat = (duration: GuildMuteDurations) => muteGuildChat(bot, duration);
-    bot.muteGuildMember = (member: string, duration: GuildMuteDurations) => muteGuildMember(bot, member, duration);
-    bot.unmuteGuildChat = () => unmuteGuildChat(bot);
-    bot.unmuteGuildMember = (member: string) => unmuteGuildMember(bot, member);
-    bot.getGuildInfo = () => getGuildInfo(bot);
-    bot.getGuildMembers = () => getGuildMembers(bot);
-    bot.getGuildMember = (member: string) => getGuildMember(bot, member);
-    bot.inviteToGuild = (member: string) => inviteToGuild(bot, member);
-    bot.kickFromGuild = (member: string) => kickFromGuild(bot, member);
-    bot.promoteGuildMember = (member: string) => promoteGuildMember(bot, member);
-    bot.demoteGuildMember = (member: string) => demoteGuildMember(bot, member);
-    bot.sendPrivateMessage = (player: string, msg: string) => sendPrivateMessage(bot, player, msg);
+    bot.sendGuildMessage = (msg: string) => bot.commands.sendGuildMessage(msg);
+    bot.sendGuildOfficerMessage = (msg: string) => bot.commands.sendGuildOfficerMessage(msg);
+    bot.toggleGuildSlowChat = () => bot.commands.toggleGuildSlowChat();
+    bot.muteGuildChat = (duration: GuildMuteDurations) => bot.commands.muteGuildChat(duration);
+    bot.muteGuildMember = (member: string, duration: GuildMuteDurations) =>
+      bot.commands.muteGuildMember(member, duration);
+    bot.unmuteGuildChat = () => bot.commands.unmuteGuildChat();
+    bot.unmuteGuildMember = (member: string) => bot.commands.unmuteGuildMember(member);
+    bot.getGuildInfo = () => bot.commands.getGuildInfo();
+    bot.getGuildMembers = () => bot.commands.getGuildMembers();
+    bot.getGuildMember = (member: string) => bot.commands.getGuildMember(member);
+    bot.inviteToGuild = (member: string) => bot.commands.inviteToGuild(member);
+    bot.kickFromGuild = (member: string) => bot.commands.kickFromGuild(member);
+    bot.promoteGuildMember = (member: string) => bot.commands.promoteGuildMember(member);
+    bot.demoteGuildMember = (member: string) => bot.commands.demoteGuildMember(member);
+    bot.sendPrivateMessage = (player: string, msg: string) => bot.commands.sendPrivateMessage(player, msg);
     bot.replyToPrivateMessage = (msg: string) => bot.commands.replyToPrivateMessage(msg);
     bot.addFriend = (player: string) => bot.commands.addFriend(player);
     bot.denyFriend = () => bot.commands.denyFriend();
@@ -126,7 +127,7 @@ export const HyFlayer = (options?: HyFlayerPluginOptions): ((bot: Bot) => void) 
     bot.toggleChat = () => bot.commands.toggleChat();
     bot.sendHypixelCommand = (command: string, args?: readonly string[]) =>
       bot.commands.sendHypixelCommand(command, args);
-    bot.sendSkyblockCoopMessage = (msg: string) => sendSkyblockCoopMessage(bot, msg);
+    bot.sendSkyblockCoopMessage = (msg: string) => bot.commands.sendSkyblockCoopMessage(msg);
 
     /* Proxy Parsing */
     bot.once("login", () => {
